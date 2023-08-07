@@ -95,9 +95,7 @@ public class view {
     }
     public static void TeachNew(String name, String newtrick) {
         String sql = "SELECT animal_id, animal_cmd FROM dogs WHERE animal_name = \'" + name + "'";
-
         System.out.println("____________________________________________________________");
-        System.out.println(sql);
         System.out.println();
         try (Connection conn = DriverManager.getConnection(Config.url, Config.user, Config.password)) {
             Statement stmt = conn.createStatement();
@@ -117,7 +115,6 @@ public class view {
         } catch (SQLException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
     }
 
     private static void Action (int action) {
